@@ -1,1 +1,110 @@
-// Write your styles here
+@mixin button {
+  background-color: $button-bg-color;
+  padding: map-get($button_settings,"button_padding");
+  border: map-get($button_settings,"button_border");
+  color: #f2f3f7;
+  font-family: $ssp-font;
+  font-size: 22px;
+  outline: none;
+  font-weight: bold;
+  transition: all 0.1s;
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hover-bg-color;
+    }
+    &:active {
+        box-shadow: inset 0px 0px 24px -1px $button-active-bg-color;
+    }
+}
+
+%header-underline {
+    content: '';
+    width: 380px;
+    height: 60px;
+    top: 290px;
+    position: absolute;
+    background-color: $underline-color;
+    z-index: -1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $content-bg-color;
+}
+
+.header {
+background-image: $header-img;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 0 50%;
+display: flex;
+max-width: 1920px;
+min-height: 900px;
+border-radius: 0 0 40% 0 / 40%;
+padding: 25px 192px 0 192px;
+  &-wrap {
+    z-index: 1;
+  }
+  &_heading {
+    width: 50%;
+    margin-top: 100px;
+    font-family: $ssp-font;
+    font-size: 90px;
+    color: $heading-text;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 90px;
+    &::before {
+        @extend %header-underline;
+    }
+  }
+  &_text {
+    padding-top: 40px;
+    font-family: $hind-font;
+    color: $heading-text;
+    font-size: 20px;
+    white-space: pre-line;
+    line-height: 30px;
+  }
+  &_button {
+    margin-top: 80px;
+    margin-right: 190px;
+    @include button();
+  }
+}
+
+.header-wrap {
+    a {
+      color: #FFFFFF;
+      font-size: 25px;
+        &:hover {
+          color: #699900;
+        }
+    }
+}
+
+.landing-logo {
+    img {
+        float: left;
+    }
+    p {
+        margin-left: 20px;
+        font-family: $hind-font;
+        font-size: 30px;
+        color: $heading-text;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 20px;
+        padding-top: 5px;
+    }
+    span {
+        display: block;
+        font-size: 10px;
+        text-align: center;
+    }
+}

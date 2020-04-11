@@ -1,0 +1,84 @@
+.header_heading::before {
+  content: '';
+  width: 380px;
+  height: 60px;
+  top: 290px;
+  position: absolute;
+  background-color: #ff4e33;
+  z-index: -1; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #21232e; }
+
+.header {
+  background-image: url(../img/m-h-night.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+  display: flex;
+  max-width: 1920px;
+  min-height: 900px;
+  border-radius: 0 0 40% 0 / 40%;
+  padding: 25px 192px 0 192px; }
+  .header-wrap {
+    z-index: 1; }
+  .header_heading {
+    width: 50%;
+    margin-top: 100px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 90px;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 90px; }
+  .header_text {
+    padding-top: 40px;
+    font-family: "Fresca", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    white-space: pre-line;
+    line-height: 30px; }
+  .header_button {
+    margin-top: 80px;
+    margin-right: 190px;
+    background-color: #e3ac00;
+    padding: 20px 55px;
+    border: none;
+    color: #f2f3f7;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 22px;
+    outline: none;
+    font-weight: bold;
+    transition: all 0.1s; }
+    .header_button:hover {
+      cursor: pointer;
+      background-color: #cf9b00; }
+    .header_button:active {
+      box-shadow: inset 0px 0px 24px -1px rgba(145, 108, 0, 0.7); }
+
+.header-wrap a {
+  color: #FFFFFF;
+  font-size: 25px; }
+  .header-wrap a:hover {
+    color: #699900; }
+
+.landing-logo img {
+  float: left; }
+.landing-logo p {
+  margin-left: 20px;
+  font-family: "Fresca", sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  padding-top: 5px; }
+.landing-logo span {
+  display: block;
+  font-size: 10px;
+  text-align: center; }
