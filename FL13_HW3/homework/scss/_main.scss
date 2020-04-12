@@ -3,7 +3,7 @@
   padding: map-get($button_settings,"button_padding");
   border: map-get($button_settings,"button_border");
   color: #f2f3f7;
-  font-family: $ssp-font;
+  font-family: $primary-font;
   font-size: 22px;
   outline: none;
   font-weight: bold;
@@ -42,49 +42,49 @@ body {
 }
 
 .header {
-background-image: $header-img;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: 0 50%;
-display: flex;
-max-width: 1920px;
-min-height: 900px;
-border-radius: 0 0 40% 0 / 40%;
-padding: 25px 192px 0 192px;
-@include link (#FFFFFF, 25px);
-  &-wrap {
-    z-index: 1;
-  }
-  &_heading {
-    width: 50%;
-    margin-top: 100px;
-    font-family: $ssp-font;
-    font-size: 90px;
-    color: $heading-text;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 90px;
-    &::before {
-      width: 380px;
-      height: 60px;
-      top: 287px;
-      @extend %underline;
+  background-image: $header-img;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+  display: flex;
+  max-width: 1920px;
+  min-height: 900px;
+  border-radius: 0 0 40% 0 / 40%;
+  padding: 25px 192px 0 192px;
+  @include link (#FFFFFF, 25px);
+    &-wrap {
+      z-index: 1;
+    }
+    &_heading {
+      width: 50%;
+      margin-top: 100px;
+      font-family: $primary-font;
+      font-size: 90px;
+      color: $heading-text;
+      font-weight: bold;
+      display: inline-block;
+      line-height: 90px;
+      &::before {
+        width: 380px;
+        height: 60px;
+        top: 287px;
+        @extend %underline;
+      }
+    }
+    &_text {
+      padding-top: 40px;
+      font-family: $secondary-font;
+      color: $heading-text;
+      font-size: 20px;
+      white-space: pre-line;
+      line-height: 30px;
+    }
+    &_button {
+      margin-top: 80px;
+      margin-right: 190px;
+      @include button();
     }
   }
-  &_text {
-    padding-top: 40px;
-    font-family: $hind-font;
-    color: $heading-text;
-    font-size: 20px;
-    white-space: pre-line;
-    line-height: 30px;
-  }
-  &_button {
-    margin-top: 80px;
-    margin-right: 190px;
-    @include button();
-  }
-}
 
 .landing-logo {
     img {
@@ -92,7 +92,7 @@ padding: 25px 192px 0 192px;
     }
     p {
         margin-left: 20px;
-        font-family: $hind-font;
+        font-family: $secondary-font;
         font-size: 30px;
         color: $heading-text;
         display: inline-block;
@@ -118,7 +118,7 @@ padding: 25px 192px 0 192px;
     &_text {
         margin: 40px 0 45px 0;
         text-align: center;
-        font-family: $ssp-font;
+        font-family: $primary-font;
         font-size: 50px;
         color: $heading-text;
         font-weight: 600;
@@ -151,7 +151,7 @@ padding: 25px 192px 0 192px;
             top: 15%;
         }
         &_heading {
-            font-family: $ssp-font;
+            font-family: $primary-font;
             font-size: 36px;
             color: $heading-text;
             font-weight: bold;
@@ -164,7 +164,7 @@ padding: 25px 192px 0 192px;
             @extend %underline;
         }
         &_text {
-            font-family: $hind-font;
+            font-family: $secondary-font;
             font-size: 20px;
             color: #abc3ce;
         }
@@ -195,7 +195,7 @@ padding: 25px 192px 0 192px;
         }
         &_heading {
             padding-top: 50px;
-            font-family: $ssp-font;
+            font-family: $primary-font;
             font-size: 25px;
             font-weight: 600;
             color: #ffffff;
@@ -204,7 +204,7 @@ padding: 25px 192px 0 192px;
 
         &_text {
             padding: 30px 0 30px 0;
-            font-family: $hind-font;
+            font-family: $secondary-font;
             font-size: 19px;
             color: $card-text-color;
             line-height: 30px;
@@ -234,12 +234,12 @@ padding: 25px 192px 0 192px;
         }
     }
     &_text {
-        font-family: $hind-font;
+        font-family: $secondary-font;
         font-size: 15px;
         color: $footer-text-color;
     }
     &-cr {
-        font-family: $hind-font;
+        font-family: $secondary-font;
         font-size: 20px;
         color: $footer-text-color;
     }
