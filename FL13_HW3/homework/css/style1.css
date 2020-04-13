@@ -168,7 +168,7 @@ body {
       padding: 0 125px 0 100px; }
       .section_card_right_container a {
         color: #d1d1d1;
-        font-size: 19px; }
+        font-size: 20px; }
     .section_card_heading {
       padding-top: 50px;
       font-family: "Source Sans Pro", sans-serif;
@@ -179,7 +179,7 @@ body {
     .section_card_text {
       padding: 30px 0 30px 0;
       font-family: "Hind", sans-serif;
-      font-size: 19px;
+      font-size: 20px;
       color: #c0c3ce;
       line-height: 30px; }
 
@@ -197,14 +197,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; }
-  .footer_logo p {
-    color: #bfc1cc; }
-  .footer_text {
-    font-family: "Hind", sans-serif;
-    font-size: 15px;
-    color: #bfc1cc; }
-  .footer-cr {
+    align-items: center;
     font-family: "Hind", sans-serif;
     font-size: 20px;
     color: #bfc1cc; }
+  .footer_logo p {
+    color: #bfc1cc; }
+  .footer_text {
+    max-width: 30%; }
