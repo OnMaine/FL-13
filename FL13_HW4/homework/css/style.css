@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  color: #777;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  background-color: #000;
+  height: 100%;
+  min-width: 320px;
+}
+
+.header {
+  background-color: white;
+  color: black;
+}
+
+.header-wrap {
+  max-width: 1140px;
+  height: 86px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-wrap a {
+  padding-right: 45px;
+  color: #777;
+  font-size: 0.83rem;
+  letter-spacing: 0.11rem;
+}
+
+.header-wrap a:hover {
+  color: #bfba55;
+}
+
+.header-nav ul {
+  display: flex;
+}
+
+.header-logo {
+  font-family: 'PT Serif', serif;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.19rem;
+  font-weight: bolder;
+  padding-left: 45px;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/home-bg.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 86px);
+}
+
+.hero h1 {
+  color: #FFF;
+  font-size: 3.92rem;
+  padding: 35px;
+}
+
+.hero p {
+  color: #bfba55;
+  font-family: 'PT Serif', serif;
+  font-size: 0.73rem;
+  letter-spacing: 0.19rem;
+}
+
+.header-button {
+  background-color: #FFFFFF;
+  margin: 55px;
+  padding: 15px 25px;
+  border: 1px solid #000;
+  border-radius: 2.7rem;
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: #000;
+  font-weight: bold;
+  outline: none;
+  transition: all 0.1s;
+}
+
+.header-button:hover {
+  cursor: pointer;
+}
+
+.header-button:active {
+    box-shadow: inset 0 0 24px -1px #000;
+}
