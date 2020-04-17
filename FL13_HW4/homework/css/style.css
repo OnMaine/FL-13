@@ -9,6 +9,7 @@ body {
   font-family: 'Merriweather', serif;
   font-size: 18px;
   color: #777;
+  background-color: #ffffff;
 }
 
 a {
@@ -16,9 +17,8 @@ a {
 }
 
 .container {
-  background-color: #000;
   height: 100%;
-  min-width: 320px;
+  min-width: 17.8rem;
 }
 
 .header {
@@ -27,8 +27,8 @@ a {
 }
 
 .header-wrap {
-  max-width: 1140px;
-  height: 86px;
+  max-width: 76.5rem;
+  height: 5.4rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -36,7 +36,7 @@ a {
 }
 
 .header-wrap a {
-  padding-right: 45px;
+  padding-right: 2.9rem;
   color: #777;
   font-size: 0.83rem;
   letter-spacing: 0.11rem;
@@ -52,11 +52,12 @@ a {
 
 .header-logo {
   font-family: 'PT Serif', serif;
-  font-size: 1.35rem;
+  font-size: 1.22rem;
   text-transform: uppercase;
-  letter-spacing: 0.19rem;
-  font-weight: bolder;
-  padding-left: 45px;
+  letter-spacing: 0.26rem;
+  padding-left: 2.8rem;
+  font-weight: bold;
+  color: #555555;
 }
 
 .hero {
@@ -66,16 +67,17 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 86px);
+  height: calc(100vh - 5.4rem);
 }
 
 .hero h1 {
   color: #FFF;
-  font-size: 3.92rem;
-  padding: 35px;
+  font-size: 3.88rem;
+  letter-spacing: 0.03rem;
 }
 
 .hero p {
+  margin-top: 1.24rem;
   color: #bfba55;
   font-family: 'PT Serif', serif;
   font-size: 0.73rem;
@@ -84,10 +86,10 @@ a {
 
 .header-button {
   background-color: #FFFFFF;
-  margin: 55px;
-  padding: 15px 25px;
-  border: 1px solid #000;
-  border-radius: 2.7rem;
+  margin: 3rem;
+  padding: 0.82rem 1.385rem;
+  border: 0.056rem solid #000;
+  border-radius: 2.8rem;
   font-family: 'Merriweather', serif;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -102,5 +104,143 @@ a {
 }
 
 .header-button:active {
-    box-shadow: inset 0 0 24px -1px #000;
+    box-shadow: inset 0 0 1.3rem -0.05rem #000;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card-wrapp {
+  max-width: 950px;
+}
+
+.section-card {
+  padding: 90px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section-card:last-child {
+  border-style: none;
+}
+
+.card-footer-container h2 {
+  color: #000000;
+}
+
+.card-footer-container p {
+  font-size: 14px;
+  word-spacing: 2px;
+  line-height: 2;
+}
+
+.section-card-img {
+    width: 100%;
+    height: 630px;
+}
+
+.card-button {
+  background-color: #FFFFFF;
+  color: #777;
+  margin: 45px 0 60px;
+  padding: 0.85rem 1.785rem;
+  border: 0.11rem solid #f0f0f0;
+  border-radius: 2.8rem;
+  font-family: 'Merriweather', serif;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.1s;
+  font-weight: bolder;
+}
+
+.card-button:hover {
+  cursor: pointer;
+}
+
+.card-button:active {
+    box-shadow: inset 0 0 1.3rem -0.05rem #000;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #000000;
+  padding: 20px 0 30px 0;
+  font-family: 'Lora', serif;
+}
+
+.autor-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.autor-name {
+  padding: 0 15px 0 5px;
+}
+
+.post-date {
+  padding-right: 15px;
+}
+
+.comment-icon {
+font-size: 16px
+}
+
+.footer {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-wrapp {
+  max-width: 950px;
+  height: 360px;
+  display: flex;
+  padding-top: 100px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.footer-section {
+  width: 50%;
+}
+
+.footer-title {
+  color: #FFFFFF;
+  font-size: 27px;
+  font-family: 'PT Serif', serif;
+  font-weight: bold;
+  padding-bottom: 25px;
+}
+
+.contacts {
+  padding-left: 85px;
+}
+
+.footer-copy {
+  padding-right: 85px;
+}
+
+.copy-text {
+  font-size: 15px;
+  padding-bottom: 30px;
+}
+
+.copyright {
+  font-size: 15px;
+  font-family: 'PT Serif', serif;
+}
+
+.contact-info p, a {
+  font-family: 'PT Serif', serif;
+  font-style: normal;
+  color: #777;
+  font-size: 15px;
+  padding-bottom: 30px;
 }
