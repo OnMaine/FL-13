@@ -101,6 +101,7 @@ a {
 
 .header-button:hover {
   cursor: pointer;
+  opacity: .7;
 }
 
 .header-button:active {
@@ -116,6 +117,7 @@ a {
 
 .main-card-wrapp {
   max-width: 59rem;
+  padding: 0 0.5556rem;
 }
 
 .section-card {
@@ -194,6 +196,7 @@ a {
 
 .card-button:hover {
   cursor: pointer;
+  border: 0.11rem solid #929292;
 }
 
 .card-button:active {
@@ -209,7 +212,7 @@ a {
 .footer-wrapp {
   max-width: 59rem;
   display: flex;
-  padding: 5.75rem 0 5.45rem;
+  padding: 5.75rem 0.5556rem 5.45rem;
   flex-direction: row;
   justify-content: space-between;
 }
