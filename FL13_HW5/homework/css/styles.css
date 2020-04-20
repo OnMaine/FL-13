@@ -160,26 +160,30 @@ main .posts:nth-child(even) .post-description {
 
 .posts:hover,
 .posts:hover .post-img img{
-  opacity: 0.4;
+  opacity: 0.5;
   cursor: pointer;
 }
 
-.post-1 {
+.post-1,
+.post-box-1 {
   grid-area: post1;
   background: #f3d250;
 }
 
-.post-2 {
+.post-2,
+.post-box-2 {
   grid-area: post2;
   background: #8D8741;
 }
 
-.post-3 {
+.post-3,
+.post-box-3 {
   grid-area: post3;
   background: #659DBD;
 }
 
-.post-4 {
+.post-4,
+.post-box-4 {
   grid-area: post4;
   background: #DAAD86;
 }
