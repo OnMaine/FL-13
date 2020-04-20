@@ -1,16 +1,3 @@
-/*
- * Feel free to change name of colors if you need it
- * Feel free to add new colors if you need it
- */
-
-:root {
-  --bg-color--dark: #0b192f;
-  --bg-color--medium: #162b4d;
-  --text--color: #484848;
-  --link: #fff;
-  --link--hover: #b8b8b8;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +10,11 @@ body {
   font-family: roboto;
   background-color: #0b192f;
   font-weight: lighter;
+}
+
+h2 {
+ font-weight: lighter;
+ font-size: 35px;
 }
 
 .wrapper {
@@ -147,23 +139,19 @@ main .posts:nth-child(even) .post-description {
 
 .post-description {
   grid-area: post-description;
-  font-size: 30px;
+  font-size: 20px;
   padding: 30px 30px 35px 50px;
+  line-height: 1.5;
 }
 
 .post-description p {
   padding-top: 20px;
 }
 
-.posts h2,
-.post-5 h2 {
-  font-weight: lighter;
-  font-size: 30px;
-}
-
 .date {
   position: absolute;
   text-align: center;
+  font-size: 40px;
 }
 
 .data-month {
@@ -172,7 +160,7 @@ main .posts:nth-child(even) .post-description {
 
 .posts:hover,
 .posts:hover .post-img img{
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: pointer;
 }
 
@@ -217,13 +205,36 @@ aside {
 }
 
 .news-description {
-  padding: 20px;
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-description h2 {
+  font-weight: lighter;
+  font-size: 20px;
 }
 
 .news-description p {
-  padding-top: 10px;
+  padding: 20px 0;
+  font-size: 15px;
 }
 
+.more-button {
+  background-color: #ffffff;
+  width: 50%;
+  padding: 7px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.more-button:hover {
+  border: 1px solid #FFFFFF;
+  border-bottom: 1px solid #000000;
+  cursor: pointer;
+}
 
 footer {
   grid-area: footer;
@@ -263,7 +274,7 @@ footer {
     grid-gap: 20px;
   }
   .post-description {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
   }
   .date {
@@ -278,7 +289,7 @@ footer {
       "header header header"
       "main main aside"
       "footer footer footer";
-    grid-template-rows: 200px 1fr 100px;
+    grid-template-rows: 200px 1fr 150px;
     grid-template-columns: 40% 1fr 40%;
     grid-gap: 10px;
   }
@@ -327,11 +338,16 @@ footer {
   }
 
   main .posts:nth-child(even) .post-description {
-    padding: 30px 50px;
+    padding: 30px 20px;
     text-align: left;
   }
   main .posts:nth-child(odd) .post-description {
-    padding: 30px 50px;
+    padding: 30px 20px;
+  }
+
+  main .posts:nth-child(even) .post-description .date,
+  main .posts:nth-child(odd) .post-description .date {
+    display: block;
   }
 
   .date {
@@ -354,7 +370,7 @@ footer {
   }
 
   .post-5 .post-description {
-    padding: 30px 50px;
+    padding: 60px 30px;
   }
 
   .post-5 .post-description .date {
@@ -379,6 +395,7 @@ footer {
         "signature signature";
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    padding: 30px 0 15px;
   }
 
   .copyright {
@@ -408,5 +425,18 @@ footer {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
+  }
+
+  .more-button {
+    width: 25%;
+  }
+
+  main .posts:nth-child(even) .post-description,
+  main .posts:nth-child(odd) .post-description {
+    padding: 20px;
+  }
+
+  .post-description {
+     font-size: 17px;
   }
 }
