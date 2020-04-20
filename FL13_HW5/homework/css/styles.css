@@ -82,7 +82,7 @@ main .posts:nth-child(odd) {
   grid-template-columns: 50% 50%;
 }
 
-main .posts:nth-child(odd) .post-description .date {
+main .posts:nth-child(odd) .post-description .post-date {
   display: flex;
   flex-direction: column;
   right: 20px;
@@ -103,7 +103,7 @@ main .posts:nth-child(even) {
   text-align: right;
 }
 
-main .posts:nth-child(even) .post-description .date {
+main .posts:nth-child(even) .post-description .post-date {
   display: flex;
   flex-direction: column;
   left: 20px;
@@ -135,6 +135,7 @@ main .posts:nth-child(even) .post-description {
 
 .post-img img {
   width: 100%;
+  object-fit: cover;
 }
 
 .post-description {
@@ -148,44 +149,45 @@ main .posts:nth-child(even) .post-description {
   padding-top: 20px;
 }
 
-.date {
+.post-date {
   position: absolute;
   text-align: center;
   font-size: 40px;
 }
 
-.data-month {
+.date-month {
   font-size: 25px;
 }
 
-.posts:hover,
-.posts:hover .post-img img{
-  opacity: 0.5;
+.posts:hover .post-description,
+.posts:hover .post-img img {
   cursor: pointer;
+  z-index: -1;
+  opacity: 0.5;
 }
 
-.post-1,
-.post-box-1 {
+.post-1 {
   grid-area: post1;
   background: #f3d250;
+  z-index: 1;
 }
 
-.post-2,
-.post-box-2 {
+.post-2 {
   grid-area: post2;
   background: #8D8741;
+  z-index: 1;
 }
 
-.post-3,
-.post-box-3 {
+.post-3 {
   grid-area: post3;
   background: #659DBD;
+  z-index: 1;
 }
 
-.post-4,
-.post-box-4 {
+.post-4 {
   grid-area: post4;
   background: #DAAD86;
+  z-index: 1;
 }
 
 .post-5 {
@@ -206,6 +208,7 @@ aside {
 
 .news img {
   width: 100%;
+  object-fit: cover;
 }
 
 .news-description {
@@ -232,6 +235,7 @@ aside {
   font-size: 10px;
   color: #000000;
   border: 1px solid #000000;
+  overflow: hidden;
 }
 
 .more-button:hover {
@@ -281,7 +285,7 @@ footer {
     font-size: 20px;
     line-height: 1.5;
   }
-  .date {
+  .post-date {
     font-size: 40px;
   }
 }
@@ -337,7 +341,7 @@ footer {
   .post-description {
     font-size: 15px;
   }
-  .date {
+  .post-date {
     font-size: 35px;
   }
 
@@ -349,12 +353,12 @@ footer {
     padding: 30px 20px;
   }
 
-  main .posts:nth-child(even) .post-description .date,
-  main .posts:nth-child(odd) .post-description .date {
+  main .posts:nth-child(even) .post-description .post-date,
+  main .posts:nth-child(odd) .post-description .post-date {
     display: block;
   }
 
-  .date {
+  .post-date {
     position: relative;
   }
 
@@ -368,7 +372,8 @@ footer {
     grid-template-columns: 50% 50%;
   }
 
-  main .posts:nth-child(odd) .post-description .date, main .posts:nth-child(even) .post-description .date {
+  main .posts:nth-child(odd) .post-description .post-date,
+  main .posts:nth-child(even) .post-description .post-date {
     right: 0;
     bottom: 0;
   }
@@ -377,7 +382,7 @@ footer {
     padding: 60px 30px;
   }
 
-  .post-5 .post-description .date {
+  .post-5 .post-description .post-date {
     top: 0;
     right: 0;
   }
