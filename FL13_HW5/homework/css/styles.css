@@ -162,8 +162,9 @@ main .posts:nth-child(even) .post-description {
 .posts:hover .post-description,
 .posts:hover .post-img img {
   cursor: pointer;
-  z-index: -1;
+  z-index: 1;
   opacity: 0.5;
+  transition: 0.5s ease;
 }
 
 .post-1 {
@@ -242,6 +243,7 @@ aside {
   border: 1px solid #FFFFFF;
   border-bottom: 1px solid #000000;
   cursor: pointer;
+  transition: 0.3s ease-out;
 }
 
 footer {
