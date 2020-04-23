@@ -1,24 +1,10 @@
-let billAmount = parseFloat(prompt('What is your total bill?'));
-let tipAmount = parseFloat(prompt('How much do you want to tip'));
+let word = prompt('What is your word?');
 
-if(isNaN(billAmount) || isNaN(tipAmount)){
-     alert('Invalid input data');
-} else if (billAmount < 0 || tipAmount < 0){
-         alert('Invalid input data');
-    } else {
-        alert(
-          `Check number: ${billAmount} \nTip: ${tipAmount} \nTip amount: ${tip} \nTotal sum to pay: ${tipTotal}`
-        );
-
-
-
-    let tip = tipAmount / 100;
-    let tipTotal = tip * billAmount;
-
-    console.log('The tip is ' + tipTotal);
-    console.log('The total bill is ' + finalCost(billAmount, tipTotal));
+function getMiddle(word) {
+  if (word.length % 2 == 0) {
+    return word.substring(word.length / 2 - 1, word.length / 2 + 1);
+  } else {
+    return word.substring(Math.floor(word.length / 2), Math.floor(word.length / 2) + 1)
+    }
 }
-
-function finalCost(billAmount, tipTotal) {
-  return billAmount + tipTotal;
-}
+alert(getMiddle(word));
