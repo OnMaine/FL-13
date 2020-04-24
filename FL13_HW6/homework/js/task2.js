@@ -1,15 +1,19 @@
 let word = prompt('What is your word?');
-const mod = 2;
+const divisionBy = 2;
+const isEven = word.length % divisionBy === 0;
+const middleCharIndex = word.length / divisionBy;
+const evenResult = word.substring(middleCharIndex - 1, middleCharIndex + 1);
+const oddResult = word.substring(Math.floor(middleCharIndex), Math.floor(middleCharIndex) + 1);
 
-if (word !== null && typeof word !=='undefined') {
+if (word) {
    word = word.trim();
 }
 if (!word) {
    alert('Invalid value');
 } else {
-  if (word.length % mod === 0) {
-    alert(word.substring(word.length / mod - 1, word.length / mod + 1));
+  if (isEven) {
+    alert(evenResult);
   } else {
-    alert(word.substring(Math.floor(word.length / mod), Math.floor(word.length / mod) + 1));
+    alert(oddResult);
     }
 }
