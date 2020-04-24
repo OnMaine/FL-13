@@ -1,10 +1,15 @@
 let word = prompt('What is your word?');
+const mod = 2;
 
-function getMiddle(word) {
-  if (word.length % 2 == 0) {
-    return word.substring(word.length / 2 - 1, word.length / 2 + 1);
+if (word !== null && typeof word !=='undefined') {
+   word = word.trim();
+}
+if (!word) {
+   alert('Invalid value');
+} else {
+  if (word.length % mod === 0) {
+    alert(word.substring(word.length / mod - 1, word.length / mod + 1));
   } else {
-    return word.substring(Math.floor(word.length / 2), Math.floor(word.length / 2) + 1)
+    alert(word.substring(Math.floor(word.length / mod), Math.floor(word.length / mod) + 1));
     }
 }
-alert(getMiddle(word));
