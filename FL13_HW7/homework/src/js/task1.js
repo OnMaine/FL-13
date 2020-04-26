@@ -8,26 +8,17 @@ let dayHours = new Date('2020-04-26T08:00:00').getHours();
 let nightHours = new Date('2020-04-26T20:00:00').getHours();
 const timeRange = currentHours >= dayHours && currentHours < nightHours;
 
-//let user = { login:'User', password: 'UserPass' };
-//let admin = { login:'Admin', password: 'RootPass' };
-function makeUser(login, password) {
-  return {
-    login,
-    password
-  };
-}
-let user = makeUser('User', 'UserPass');
-let admin = makeUser('Admin', 'RootPass');
-
+let user = { login:'User', password: 'UserPass' };
+let admin = { login:'Admin', password: 'RootPass' };
 
 if (login === user.login || login === admin.login) {
     password = prompt('Enter your password');
     if (login === user.login && password === user.password ||
     login === admin.login && password === admin.password) {
-      if (timeRange && login === user.login && password === user.password) {
-        alert('Good day, dear User!');
+      if (timeRange) {
+        alert('Good day, dear ' + login + '!');
       } else {
-        alert('Good evening, dear User!');
+        alert('Good evening, dear '+ login + '!');
       }
     } else if (password === null) {
         alert('Canceled.');
