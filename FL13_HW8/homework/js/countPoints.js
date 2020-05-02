@@ -1,5 +1,12 @@
 function countPoints(gameResults){
-return gameResults.reduce((totalPoints, current) => {totalPoints += current[0] > current[2] ? 3 : current[0]===current[2] ? 1 : 0;return totalPoints;},0);
+  return gameResults.reduce((totalPoints, currentResult) => {
+    const [resultA, resultB] = currentResult.split(':');
+    let points = 1;
+    if (resultA > resultB) points = 3;
+    if (resultA < resultB) points = 0;
+    totalPoints += points;
+    return totalPoints;
+  }, 0);
 }
 
 console.log(countPoints(['1:1', '1:2', '2:0', '4:2', '0:1', '2:3', '1:1', '0:1', '1:1', '3:0']));
