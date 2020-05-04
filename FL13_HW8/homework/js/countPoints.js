@@ -2,8 +2,12 @@ function countPoints(gameResults){
   return gameResults.reduce((totalPoints, currentResult) => {
     const [resultA, resultB] = currentResult.split(':');
     let points = 1;
-    if (resultA > resultB) points = 3;
-    if (resultA < resultB) points = 0;
+    if (resultA > resultB) {
+      points = 3;
+    }
+    if (resultA < resultB) {
+      points = 0;
+    }
     totalPoints += points;
     return totalPoints;
   }, 0);
