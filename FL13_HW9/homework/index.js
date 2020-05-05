@@ -47,7 +47,7 @@ filterArray([2, 5, 8], function(el) {
 });
 
 function containsValue(a, obj) {
-    var i = a.length;
+    let i = a.length;
     while (i--) {
        if (a[i] === obj) {
            return true;
