@@ -46,10 +46,10 @@ filterArray([2, 5, 8], function(el) {
   return el % 2 === 0
 });
 
-function containsValue(a, obj) {
-    let i = a.length;
+function containsValue(arrValue, obj) {
+    let i = arrValue.length;
     while (i--) {
-       if (a[i] === obj) {
+       if (arrValue[i] === obj) {
            return true;
        }
     }
@@ -58,17 +58,17 @@ function containsValue(a, obj) {
 containsValue([2, 5, 8], 2);
 containsValue([12, 4, 6], 5);
 
-function flipOver(str) {
+function flipOver(flipStr) {
     let newStr = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        newStr += str.charAt(i);
+    for (let i = flipStr.length - 1; i >= 0; i--) {
+        newStr += flipStr.charAt(i);
     }
     return newStr;
 }
 flipOver('hey world');
 
-function makeListFromRange(arr) {
-    let [start, stop] = arr;
+function makeListFromRange(arrRange) {
+    let [start, stop] = arrRange;
     let list = [start], b = start;
     let step = 1;
     while (b < stop) {
@@ -77,3 +77,23 @@ function makeListFromRange(arr) {
     return list;
 }
 makeListFromRange([2, 7]);
+
+function formatDate(date) {
+  let d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear(),
+      hour = d.getHours(),
+      minutes = d.getMinutes();
+  let result = [year, month, day].join('/') +' ' +[hour, minutes].join(':');
+  if (month.length < 2) {
+      month = '0' + month;
+  }
+  if (day.length < 2) {
+      day = '0' + day;
+  }
+  return result;
+}
+
+formatDate(new Date('6/15/2019 09:15:00'));
+formatDate(new Date());
