@@ -1,12 +1,15 @@
-function makeListFromRange(arr) {
-    let [start, stop] = arr;
-    let list = [start], b = start;
-    let step = 1;
-    while (b < stop) {
-        list.push(b += step);
+function convert(stringToSplit) {
+    result = [];
+    for (let i = 0; i < arguments.length; i++) {
+        if (typeof(arguments[i]) === "string") {
+            result.push(Number(arguments[i]));
+        } else {
+          result.push(String(arguments[i]));
+        }
     }
-    return list;
+    return result;
 }
 
+console.log(convert('1', 2, 3, '4'));
 
-console.log(makeListFromRange([3, 7]));
+console.log(typeof result[1]);
