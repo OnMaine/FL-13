@@ -78,6 +78,36 @@ function makeListFromRange(arrRange) {
 }
 makeListFromRange([2, 7]);
 
+function getArrayOfKeys(arr, key) {
+  const values = []
+  executeforEach(arr, row => {
+    const value = row[key]
+    values.push(value)
+  })
+  return values
+}
+
+function substitute(array) {
+  return mapArray(array, value => {
+    if (value < 20 && value > 10) {
+      return '*'
+    }
+    return value
+  })
+}
+
+const getPastDay = (date, daysDelta) => {
+  const MS_PER_DAY = 8.64e+7;
+
+  const dateEpoch = date.valueOf();
+  const msDelta = daysDelta * MS_PER_DAY;
+  return new Date(dateEpoch - msDelta);
+}
+const date = new Date(2020, 0, 2);
+getPastDay(date, 1);
+getPastDay(date, 2);
+getPastDay(date, 365);
+
 function formatDate(date) {
   let d = new Date(date),
       month = '' + (d.getMonth() + 1),
