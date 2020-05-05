@@ -9,7 +9,6 @@ function convert() {
     }
     return result;
 }
-convert('1', 2, 3, '4');
 
 function executeforEach(arr, func) {
     for (let i = 0; i < arr.length; i++) {
@@ -18,10 +17,6 @@ function executeforEach(arr, func) {
     return;
 }
 
-executeforEach([1,2,3], function(el) {
- console.log(el * 2)
-});
-
 function mapArray(arr, func) {
     let array =[];
     executeforEach(arr,function(el) {
@@ -29,9 +24,6 @@ function mapArray(arr, func) {
     });
     return array;
 }
-mapArray([2, '5', 8], function(el) {
-  return el + 3
-});
 
 function filterArray(arr, func) {
     let filteredArr = [];
@@ -42,9 +34,6 @@ function filterArray(arr, func) {
     });
     return filteredArr;
 }
-filterArray([2, 5, 8], function(el) {
-  return el % 2 === 0
-});
 
 function containsValue(arrValue, obj) {
     let i = arrValue.length;
@@ -55,8 +44,6 @@ function containsValue(arrValue, obj) {
     }
     return false;
 }
-containsValue([2, 5, 8], 2);
-containsValue([12, 4, 6], 5);
 
 function flipOver(flipStr) {
     let newStr = '';
@@ -65,7 +52,6 @@ function flipOver(flipStr) {
     }
     return newStr;
 }
-flipOver('hey world');
 
 function makeListFromRange(arrRange) {
     let [start, stop] = arrRange;
@@ -76,7 +62,6 @@ function makeListFromRange(arrRange) {
     }
     return list;
 }
-makeListFromRange([2, 7]);
 
 function getArrayOfKeys(arr, key) {
   const values = []
@@ -89,7 +74,9 @@ function getArrayOfKeys(arr, key) {
 
 function substitute(array) {
   return mapArray(array, value => {
-    if (value < 20 && value > 10) {
+    let bigger = 10;
+    let smaller = 20;
+    if (value < smaller && value > bigger) {
       return '*'
     }
     return value
@@ -104,7 +91,6 @@ const getPastDay = (date, daysDelta) => {
   return new Date(dateEpoch - msDelta);
 }
 const date = new Date(2020, 0, 2);
-getPastDay(date, 1);
 
 function formatDate(date) {
   let d = new Date(date),
@@ -114,14 +100,12 @@ function formatDate(date) {
       hour = d.getHours(),
       minutes = d.getMinutes();
   let result = [year, month, day].join('/') +' ' +[hour, minutes].join(':');
-  if (month.length < 2) {
+  let febr = 2;
+  if (month.length < febr) {
       month = '0' + month;
   }
-  if (day.length < 2) {
+  if (day.length < febr) {
       day = '0' + day;
   }
   return result;
 }
-
-formatDate(new Date('6/15/2019 09:15:00'));
-formatDate(new Date());
