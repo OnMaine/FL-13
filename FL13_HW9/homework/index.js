@@ -90,7 +90,6 @@ const getPastDay = (date, daysDelta) => {
   const msDelta = daysDelta * MS_PER_DAY;
   return new Date(dateEpoch - msDelta);
 }
-const date = new Date(2020, 0, 2);
 
 function formatDate(date) {
   let d = new Date(date),
