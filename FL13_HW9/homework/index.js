@@ -105,8 +105,6 @@ const getPastDay = (date, daysDelta) => {
 }
 const date = new Date(2020, 0, 2);
 getPastDay(date, 1);
-getPastDay(date, 2);
-getPastDay(date, 365);
 
 function formatDate(date) {
   let d = new Date(date),
