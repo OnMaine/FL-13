@@ -77,16 +77,3 @@ function makeListFromRange(arr) {
     return list;
 }
 makeListFromRange([2, 7]);
-
-
-function getPastDay(date, days) {
-    return new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate() + days
-    );
-}
-
-getPastDay(date, 1); // 1, (1 Jan 2020)
-getPastDay(date, 2); // 31, (31 Dec 2019)
-getPastDay(date, 365); // 2, (2 Jan 2019)
