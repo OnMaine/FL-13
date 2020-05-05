@@ -9,7 +9,7 @@ function convert() {
     }
     return result;
 }
-convert();
+convert('1', 2, 3, '4');
 
 function executeforEach(arr, func) {
     for (let i = 0; i < arr.length; i++) {
@@ -18,7 +18,9 @@ function executeforEach(arr, func) {
     return;
 }
 
-executeforEach();
+executeforEach([1,2,3], function(el) {
+ console.log(el * 2)
+});
 
 function mapArray(arr, func) {
     let array =[];
@@ -27,7 +29,9 @@ function mapArray(arr, func) {
     });
     return array;
 }
-mapArray();
+mapArray([2, '5', 8], function(el) {
+  return el + 3
+});
 
 function filterArray(arr, func) {
     let filteredArr = [];
@@ -38,8 +42,21 @@ function filterArray(arr, func) {
     });
     return filteredArr;
 }
-filterArray();
-//5
+filterArray([2, 5, 8], function(el) {
+  return el % 2 === 0
+});
+
+function containsValue(a, obj) {
+    var i = a.length;
+    while (i--) {
+       if (a[i] === obj) {
+           return true;
+       }
+    }
+    return false;
+}
+containsValue([2, 5, 8], 2);
+containsValue([12, 4, 6], 5);
 
 function flipOver(str) {
     let newStr = '';
@@ -48,8 +65,8 @@ function flipOver(str) {
     }
     return newStr;
 }
-flipOver();
-//7
+flipOver('hey world');
+
 function makeListFromRange(arr) {
     let [start, stop] = arr;
     let list = [start], b = start;
@@ -59,4 +76,17 @@ function makeListFromRange(arr) {
     }
     return list;
 }
-makeListFromRange();
+makeListFromRange([2, 7]);
+
+
+function getPastDay(date, days) {
+    return new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate() + days
+    );
+}
+
+getPastDay(date, 1); // 1, (1 Jan 2020)
+getPastDay(date, 2); // 31, (31 Dec 2019)
+getPastDay(date, 365); // 2, (2 Jan 2019)
