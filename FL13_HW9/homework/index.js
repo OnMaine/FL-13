@@ -15,7 +15,7 @@ function executeforEach(arr, func) {
     for (let i = 0; i < arr.length; i++) {
         func(arr[i]);
     }
-    return arr;
+    return;
 }
 
 executeforEach();
@@ -23,7 +23,7 @@ executeforEach();
 function mapArray(arr, func) {
     let array =[];
     executeforEach(arr,function(el) {
-        array.push(func(el));
+        array.push(func(+el));
     });
     return array;
 }
