@@ -98,7 +98,6 @@ function openFolder() {
     }
 }
 
-
 rootNode.setAttribute('class', 'right-click-area');
 
   let context = document.createElement('ul');
