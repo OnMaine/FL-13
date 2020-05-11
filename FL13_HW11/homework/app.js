@@ -97,3 +97,41 @@ function openFolder() {
         event.target.firstChild.innerHTML = 'folder';
     }
 }
+
+
+rootNode.setAttribute('class', 'right-click-area');
+
+  let context = document.createElement('ul');
+  context.innerHTML =
+    '<ul class="right-click-menu">'+
+     ' <li id="l1">Rename</li>'+
+      '<li id="l2">Delete item</li>'+
+    '</ul>';
+
+const menuArea = document.querySelector('.right-click-area');
+const menu = document.querySelector('.right-click-menu');
+
+menuArea.addEventListener( 'contextmenu', event => {
+    event.preventDefault();
+    menu.style.top = `${event.clientY}px`;
+    menu.style.left = `${event.clientX}px`;
+    menu.classList.add('active');
+}, false);
+
+const leftMouse = 2;
+document.addEventListener('click', event => {
+    if (event.button !== leftMouse) {
+        menu.classList.remove('active');
+    }
+}, false);
+
+menu.addEventListener('click', event => {
+    event.stopPropagation();
+}, false);
+
+document.querySelector('#l1').addEventListener('click', () => {
+    alert('Доделать Переименовать');
+}, false);
+document.querySelector('#l2').addEventListener('click', () => {
+    alert('Доделать Удалить');
+}, false);

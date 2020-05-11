@@ -38,3 +38,25 @@ li:hover {
 .closed {
     display: none;
 }
+
+.right-click-area {
+   display: flex;
+   position: relative;
+}
+.right-click-menu {
+   position: fixed;
+   list-style: none;
+   display: none;
+   background-color: silver;
+}
+.right-click-menu.active {
+   display: block;
+}
+.right-click-menu li {
+   width: 100%;
+   box-sizing: border-box;
+   cursor: pointer;
+}
+.right-click-menu li:hover {
+   background-color: lightgray;
+}
