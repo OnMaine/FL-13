@@ -50,8 +50,6 @@ const data = [
   }
 ];
 
-// тут, с горем пополам, сделал дерево. Что-то спиздил, что-то достроил... Вроде збс.
-
 const rootNode = document.getElementById('root');
 
 function createTree(container, data) {
@@ -83,9 +81,6 @@ function createTree(container, data) {
 
 createTree(rootNode, data);
 
-
-// TODO закинь это в функцию как createTree, например назови attachListeners
-// Что за elem? Переменная должна сразу говорить что в ней. Например folderElements
 let elem = document.getElementsByClassName('folder');
 for (let i = 0; i < elem.length; i++) {
     elem[i].addEventListener('click', openFolder);
@@ -103,14 +98,8 @@ function openFolder() {
     }
 }
 
+rootNode.setAttribute('class', 'right-click-area');
 
-// Дальше треш который я пытался припаять)
-
-rootNode.setAttribute('class', 'right-click-area'); //  это скорее всего- дичь. Ставлю арею на весь блок.
-
-// тут создаю меню инером ( п.с.  не понимейшен куда его сувать, если припаять rootNode(вместо context), то получу меню, но пропадет дерево). АХхахахаха
-// по идее задавать область '.right-click-area' елементам на которых должно юзаться, либо создать обертку в которой это будет активно. Я тупой...
-// да и скорее всего оно рагульное, бикоз комуниздил код где все к елементам в хтмл конектилось, а тут через DOM пришлось паять, а я не особо кампутарщик.
 const contextMenu = document.createElement('div');
 contextMenu.classList.add('right-click-menu')
 contextMenu.innerHTML =
@@ -120,8 +109,6 @@ contextMenu.innerHTML =
   '</ul>';
 rootNode.appendChild(contextMenu)
 
-
-// тут как бы условия для менюшки. Какой кнопкой что делает, где какая область и т.п.
 const menuArea = document.querySelector('.right-click-area');
 const menu = document.querySelector('.right-click-menu');
 
@@ -142,8 +129,7 @@ document.addEventListener('click', event => {
 menu.addEventListener('click', event => {
     event.stopPropagation();
 }, false);
-// тут потом доделаю удаление и переименование ( но я рагуль, потому что по идее нужно было как-то по другому саму менюшку делать.
-// В чате киберкотлеты там вообще ракеты строят, а у меня код - "Петровичь" ( алкаш с 3-го падика))
+
 document.querySelector('#rename-btn').addEventListener('click', () => {
     alert('Доделать Переименовать');
 }, false);
