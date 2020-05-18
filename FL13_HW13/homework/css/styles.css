@@ -1,14 +1,5 @@
-.games-dark, footer {
-  background-color: #343a40;
-}
-
-.games-white {
+.games-bg-gray {
   background-color: #f8f9fa;
-}
-
-img {
-  max-height: 100%;
-  max-width: 100%;
 }
 
 .orange {
