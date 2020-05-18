@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BS4</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header id="header" class="menu-bar">
     <div class="container">
       <div class="row justify-content-between mt-2">
-        <div class="col-2 col-lg-2">
+        <div class="col-2 col-sm-2">
           <h1 class="logo">
             Games
           </h1>
         </div>
-        <div class="col-8 col-lg-8">
-          <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-end">
+        <div class="col-4 col-sm-8">
+          <nav class="navbar navbar-expand-md navbar-light bg-white justify-content-end">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,7 +39,7 @@
                   <a class="nav-link text-dark font-weight-bold" href="#">Disabled</a>
                 </li>
               </ul>
-              <form class="form-inline ">
+              <form class="form-inline d-none d-md-block d-lg-block d-xl-block">
                 <button class="btn btn-dark text-white align-middle" type="button" value="Input">Push to Start</button>
               </form>
             </div>
@@ -49,24 +50,145 @@
   </header>
   <section class="hero">
     <div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="hero-text col-lg-5 order-2 order-lg-1 align-self-center">
-          <div class="text col-11 pb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="hero-text col-12 col-md-6 col-lg-5 order-2 order-md-1 align-self-top">
+          <div class="text pt-sm-0 mt-sm-0 pt-md-4 mt-md-4 pt-lg-5 mt-lg-5">
             <h1>Front-end Lab</h1>
             <h1>CSS-Frameworks</h1>
             <p class="text-spasing mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus architecto dolorum facere tenetur
-               magnam eius nam expedita, sed voluptatem dignissimos quam quae cumque nulla vel! Nobis, eligendi, maiores?
-               Eaque, soluta.</p>
-            <button class="btn btn-warning text-white align-middle" type="button" value="Input">Find Out More</button>
+              magnam eius nam expedita, sed voluptatem dignissimos quam quae cumque nulla vel! Nobis, eligendi, maiores?
+              Eaque, soluta.</p>
+            <button class="btn orange text-white align-middle mb-5" type="button" value="Input">Find Out More</button>
           </div>
+        </div>
+        <div class=" hero-img col-12 col-md-6 col-lg-7 order-1 order-md-2">
+          <img src="assets/hero-5.jpg" alt="" class="img-fluid">
+        </div>
       </div>
-      <div class=" hero-img col-lg-7 order-1 order-lg-2">
-        <img src="assets/hero-5.jpg" alt="" class="img-fluid">
-    </div>
+  </section>
+  <section class="games-dark text-center text-white">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 p-5">
+          <h1 class="games-title">
+            Games section
+          </h1>
+          <p class="games-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/1.jpg" alt="#">
+          <h5 class="card-title1 pt-4">Card title</h5>
+          <p class="card-text1 pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/2.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/3.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/4.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/5.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-sm-6 col-md-4">
+          <img src="assets/6.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+      </div>
     </div>
   </section>
+  <section class="games-white text-center text-dark">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 p-5">
+          <h1 class="games-title">
+            Games section
+          </h1>
+          <p class="games-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/7.jpg" alt="#">
+          <h5 class="card-title1 pt-4">Card title</h5>
+          <p class="card-text1 pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/8.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/9.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/10.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/11.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+        <div class="games-card col-12 col-md-6">
+          <img src="assets/12.jpg" alt="#">
+          <h5 class="card-title pt-4">Card title</h5>
+          <p class="card-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ea, nam delectus voluptates, similique?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="row">
+        <div class="subscribe-text col-12 col-md-6 text-white pt-5 pb-2 pb-md-5 ">
+          <h5 class="about-title">Subscribe</h5>
+          <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut.</p>
+        </div>
+        <div class="subscribe-form col-12 col-md-6 py-md-5 pb-5">
+          <form>
+            <div class="form-row">
+              <div class="col-12 pb-2">
+                <input type="email" class="form-control" placeholder="Email Address">
+              </div>
+              <div class="col-12">
+                <button class="btn orange text-white btn-block" type="submit" value="Input">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center text-white pb-3">
+        <div class="copyrights col-8 col-sm-6 col-md-4">
+          <h5>&copy 2020 Front-end Lab</h5>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
