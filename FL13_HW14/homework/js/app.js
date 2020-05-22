@@ -12,25 +12,23 @@ function Student(name, email) {
   };
   this.addHomeworkResult = function(topic, success) {
     if (typeof success === 'boolean') {
-      homeworkResults.push({topic, success});
+      homeworkResults.push({
+        topic,
+        success
+      });
     }
- }
-
+  }
   this.getHomeworkResults = function() {
     return _homeworkResults;
   };
 }
-//
-// function FrontendLab(students, failedLimit) {
-//   let _failedHomeworksLimit = failedHomeworksLimit;
-//   let _studentsList = studentsList;
-//
-// }
-//
-function FrontendLab() {
-  const studentsList = [];
-  let _studentsList = studentsList;
-  this.getHomeworkResults = function() {
-    return _studentsList;
-  };
+
+function FrontendLab(students, failedLimit) {
+  const _students = students;
+  this.failedLimit = failedLimit;
+  const studentsList = _students.slice();
+  this.printStudentsList = function() {
+    studentsList.forEach(element => console.log('name: ' + element.name + ', ' + 'email: ' + element.email ));
+  }
+
 }
