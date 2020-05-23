@@ -28,7 +28,6 @@ function FrontendLab(students, failedLimit) {
   this.failedLimit = failedLimit;
   const studentsList = _students.slice();
   this.printStudentsList = function() {
-    studentsList.forEach(element => console.log('name: ' + element.name + ', ' + 'email: ' + element.email ));
+    studentsList.forEach(element => console.log('name: ' + element.name + ', ' + 'email: ' + element.email));
   }
-
 }
