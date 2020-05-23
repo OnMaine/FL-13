@@ -24,10 +24,11 @@ function Student(name, email) {
 }
 
 function FrontendLab(students, failedLimit) {
-  const _students = students;
   this.failedLimit = failedLimit;
-  const studentsList = _students.slice();
+  const studentsList = students.map((student) => {
+    return new Student(student.name, student.email);
+  });
   this.printStudentsList = function() {
-    studentsList.forEach(element => console.log('name: ' + element.name + ', ' + 'email: ' + element.email));
+    studentsList.forEach(element => console.log(element.getName(), element.getEmail()));
   }
 }
