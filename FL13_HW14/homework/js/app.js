@@ -2,8 +2,6 @@ function Student(name, email) {
   let _name = name;
   let _email = email;
   const homeworkResults = [];
-  let _homeworkResults = homeworkResults;
-
   this.getName = function() {
     return _name;
   };
@@ -17,7 +15,7 @@ function Student(name, email) {
     });
   }
   this.getHomeworkResults = function() {
-    return _homeworkResults;
+    return homeworkResults;
   };
 }
 
@@ -27,9 +25,10 @@ function FrontendLab(students, failedLimit) {
     return new Student(student.name, student.email);
   });
   this.printStudentsList = function() {
-    studentsList.forEach(student => console.log('name: ' + student.getName() + ', ' + 'email: ' + student.getEmail(),
-      student.getHomeworkResults()));
-  };
+    studentsList.forEach(student => {
+    return console.log(`name: ${student.getName()}, email: ${student.getEmail()}`, student.getHomeworkResults())
+  });
+};
   this.addHomeworkResults = function(homeworkResult) {
     let topicName = homeworkResult.topic;
     let studentsResultsTopic = homeworkResult.results;
