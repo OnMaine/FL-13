@@ -22,13 +22,13 @@ function Student(name, email) {
 }
 
 function FrontendLab(students, failedLimit) {
-  this.failedHomeworksLimit = failedLimit;
+  let failedHomeworksLimit = failedLimit;
   const studentsList = students.map((student) => {
     return new Student(student.name, student.email);
   });
   this.printStudentsList = function() {
-    studentsList.forEach(element => console.log('name: ' + element.getName() + ', ' + 'email: ' + element.getEmail(),
-      element.getHomeworkResults()));
+    studentsList.forEach(student => console.log('name: ' + student.getName() + ', ' + 'email: ' + student.getEmail(),
+      student.getHomeworkResults()));
   };
   this.addHomeworkResults = function(homeworkResult) {
     let topicName = homeworkResult.topic;
@@ -42,4 +42,19 @@ function FrontendLab(students, failedLimit) {
       });
     });
   };
+  this.printStudentsEligibleForTest = function() {
+    studentsList.forEach(student => {
+      let studentResults = student.getHomeworkResults();
+      let counter = 0;
+      studentResults.forEach(result => {
+        if (!result.success) {
+          counter++;
+        }
+      })
+
+      if (counter <= failedHomeworksLimit) {
+        console.log(student.getName(), student.getEmail());
+      }
+    })
+  }
 }
