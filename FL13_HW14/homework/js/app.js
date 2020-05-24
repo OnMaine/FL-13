@@ -11,12 +11,10 @@ function Student(name, email) {
     return _email;
   };
   this.addHomeworkResult = function(topic, success) {
-    if (typeof success === 'boolean') {
-      homeworkResults.push({
-        topic,
-        success
-      });
-    }
+    homeworkResults.push({
+      topic,
+      success
+    });
   }
   this.getHomeworkResults = function() {
     return _homeworkResults;
@@ -24,11 +22,27 @@ function Student(name, email) {
 }
 
 function FrontendLab(students, failedLimit) {
-  this.failedLimit = failedLimit;
+  this.failedHomeworksLimit = failedLimit;
   const studentsList = students.map((student) => {
     return new Student(student.name, student.email);
   });
   this.printStudentsList = function() {
-    studentsList.forEach(element => console.log(element.getName(), element.getEmail()));
-  }
+    studentsList.forEach(element => console.log('name: ' + element.getName() + ', ' + 'email: ' + element.getEmail(),
+      element.getHomeworkResults()));
+  };
+  this.printStudentsListTest = function() {
+    studentsList.forEach(element => console.log(element));
+  };
+  this.addHomeworkResults = function(homeworkResult) {
+    let topicName = homeworkResult.topic;
+    let studentsResultsTopic = homeworkResult.results;
+    studentsResultsTopic.forEach(resultInHomeworks => {
+      let email = resultInHomeworks.email;
+      studentsList.forEach(student => {
+        if (student.getEmail() === email) {
+          student.addHomeworkResult(topicName, resultInHomeworks.success)
+        }
+      });
+    });
+  };
 }
