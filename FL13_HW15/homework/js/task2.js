@@ -57,6 +57,8 @@ Vehicle.prototype.upgradeEngine = function(newEngine, maxSpeedUpGrade) {
   if (this.currentSpeed === 0) {
     this.engine = newEngine;
     this.maxSpeed = maxSpeedUpGrade;
+  } else {
+    console.log('Already drive');
   }
 };
 
