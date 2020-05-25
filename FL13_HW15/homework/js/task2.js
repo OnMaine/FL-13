@@ -32,15 +32,21 @@ Vehicle.prototype.drive = function() {
   if (this.isStopped) {
     clearInterval(this.timerId);
     let startInterval = 2000;
-    if (this.name === 'moto') {
+    this.isStopped = false;
+    if (this.name === 'motorcycle') {
       console.log('Let’s drive');
     }
-    this.isStopped = false;
     this.timerId = setInterval(() => {
       this.currentSpeed += 20
+      let limitOfSpeed = 30;
       console.log(this.currentSpeed)
       if (this.currentSpeed > this.maxSpeed) {
         console.log('speed is too high, SLOW DOWN!');
+        if (this.name === 'motorcycle' && this.currentSpeed + limitOfSpeed > this.maxSpeed) {
+          console.log('Engine overheating');
+          clearInterval(this.timerId);
+          this.stop();
+        }
       }
       if (this.currentSpeed > this.maxSpeedFromDrive) {
         this.maxSpeedFromDrive = this.currentSpeed
@@ -50,6 +56,7 @@ Vehicle.prototype.drive = function() {
     console.log('Already drive');
   }
 };
+
 Vehicle.prototype.stop = function() {
   clearInterval(this.timerId);
   let stopInterval = 1500;
@@ -109,6 +116,5 @@ function Motorcycle(engine, color, model) {
   Vehicle.call(this, engine, color);
   this.maxSpeed = 90;
   this.model = model;
-  this.name = 'moto';
-  this.isBroken = false;
+  this.name = 'motorcycle';
 }
