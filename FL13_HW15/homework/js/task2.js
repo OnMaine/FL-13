@@ -31,14 +31,14 @@ Vehicle.prototype.getInfo = function() {
 Vehicle.prototype.drive = function() {
   if (this.isStopped) {
     clearInterval(this.timerId);
-    let startInterval = 2000;
+    const startInterval = 2000;
     this.isStopped = false;
     if (this.name === 'motorcycle') {
       console.log('Let’s drive');
     }
     this.timerId = setInterval(() => {
       this.currentSpeed += 20
-      let limitOfSpeed = 30;
+      const limitOfSpeed = 30;
       console.log(this.currentSpeed)
       if (this.currentSpeed > this.maxSpeed) {
         console.log('speed is too high, SLOW DOWN!');
@@ -59,7 +59,7 @@ Vehicle.prototype.drive = function() {
 
 Vehicle.prototype.stop = function() {
   clearInterval(this.timerId);
-  let stopInterval = 1500;
+  const stopInterval = 1500;
   this.timerId = setInterval(() => {
     if (this.currentSpeed > 0) {
       this.currentSpeed -= 20
