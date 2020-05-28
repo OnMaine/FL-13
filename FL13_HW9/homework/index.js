@@ -1,66 +1,67 @@
 function convert() {
-    let result = [];
-    for (let i = 0; i < arguments.length; i++) {
-        if (typeof arguments[i] === 'string') {
-            result.push(Number(arguments[i]));
-        } else {
-          result.push(String(arguments[i]));
-        }
+  let result = [];
+  for (let i = 0; i < arguments.length; i++) {
+    if (typeof arguments[i] === 'string') {
+      result.push(Number(arguments[i]));
+    } else {
+      result.push(String(arguments[i]));
     }
-    return result;
+  }
+  return result;
 }
 
 function executeforEach(arr, func) {
-    for (let i = 0; i < arr.length; i++) {
-        func(arr[i]);
-    }
-    return;
+  for (let i = 0; i < arr.length; i++) {
+    func(arr[i]);
+  }
+  return;
 }
 
 function mapArray(arr, func) {
-    let array =[];
-    executeforEach(arr,function(el) {
-        array.push(func(+el));
-    });
-    return array;
+  let array = [];
+  executeforEach(arr, function(el) {
+    array.push(func(+el));
+  });
+  return array;
 }
 
 function filterArray(arr, func) {
-    let filteredArr = [];
-    executeforEach(arr, function(el) {
-        if (func(el)) {
-            filteredArr.push(el);
-        }
-    });
-    return filteredArr;
+  let filteredArr = [];
+  executeforEach(arr, function(el) {
+    if (func(el)) {
+      filteredArr.push(el);
+    }
+  });
+  return filteredArr;
 }
 
 function containsValue(arrValue, obj) {
-    let i = arrValue.length;
-    while (i--) {
-       if (arrValue[i] === obj) {
-           return true;
-       }
+  let i = arrValue.length;
+  while (i--) {
+    if (arrValue[i] === obj) {
+      return true;
     }
-    return false;
+  }
+  return false;
 }
 
 function flipOver(flipStr) {
-    let newStr = '';
-    for (let i = flipStr.length - 1; i >= 0; i--) {
-        newStr += flipStr.charAt(i);
-    }
-    return newStr;
+  let newStr = '';
+  for (let i = flipStr.length - 1; i >= 0; i--) {
+    newStr += flipStr.charAt(i);
+  }
+  return newStr;
 }
 
 function makeListFromRange(arrRange) {
-    let [start, stop] = arrRange;
-    let list = [start], b = start;
-    let step = 1;
-    while (b < stop) {
-        list.push(b += step);
-    }
-    return list;
+  let [start, stop] = arrRange;
+  let list = [start],
+    b = start;
+  let step = 1;
+  while (b < stop) {
+    list.push(b += step);
+  }
+  return list;
 }
 
 function getArrayOfKeys(arr, key) {
@@ -93,18 +94,18 @@ const getPastDay = (date, daysDelta) => {
 
 function formatDate(date) {
   let d = new Date(date),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
-      year = d.getFullYear(),
-      hour = d.getHours(),
-      minutes = d.getMinutes();
-  let result = [year, month, day].join('/') +' ' +[hour, minutes].join(':');
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear(),
+    hour = d.getHours(),
+    minutes = d.getMinutes();
+  let result = [year, month, day].join('/') + ' ' + [hour, minutes].join(':');
   let febr = 2;
   if (month.length < febr) {
-      month = '0' + month;
+    month = '0' + month;
   }
   if (day.length < febr) {
-      day = '0' + day;
+    day = '0' + day;
   }
   return result;
 }
