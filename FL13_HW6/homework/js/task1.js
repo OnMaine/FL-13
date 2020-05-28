@@ -8,7 +8,7 @@ let finalCost = billAmount + tipTotal;
 
 if (isNaN(billAmount) || isNaN(tipPerсent)) {
   alert('Invalid input data');
-} else if (billAmount < 0 || tipPerсent < 0 || tipPerсent > maxPerсent){
+} else if (billAmount < 0 || tipPerсent < 0 || tipPerсent > maxPerсent) {
   alert('Invalid input data');
 } else {
   alert(`Check number: ${billAmount}\

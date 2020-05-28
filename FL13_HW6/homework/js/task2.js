@@ -6,14 +6,14 @@ const evenResult = word.substring(middleCharIndex - 1, middleCharIndex + 1);
 const oddResult = word.substring(Math.floor(middleCharIndex), Math.floor(middleCharIndex) + 1);
 
 if (word) {
-   word = word.trim();
+  word = word.trim();
 }
 if (!word) {
-   alert('Invalid value');
+  alert('Invalid value');
 } else {
   if (isEven) {
     alert(evenResult);
   } else {
     alert(oddResult);
-    }
+  }
 }
