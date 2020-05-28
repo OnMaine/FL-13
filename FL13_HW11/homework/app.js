@@ -206,7 +206,7 @@ function contextMenuHide() {
   if (isMenuDisplayed) {
     menuBox.style.display = 'none';
     isMenuDisplayed = false;
-    if (menuActionTarget && !isRenameMode){
+    if (menuActionTarget && !isRenameMode) {
       menuActionTarget.classList.remove('highlighted');
     }
   }
