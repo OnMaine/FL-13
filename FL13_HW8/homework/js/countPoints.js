@@ -1,4 +1,4 @@
-function countPoints(gameResults){
+function countPoints(gameResults) {
   return gameResults.reduce((totalPoints, currentResult) => {
     const [resultA, resultB] = currentResult.split(':');
     let points = 1;
