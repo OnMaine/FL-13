@@ -26,9 +26,9 @@ function FrontendLab(students, failedLimit) {
   });
   this.printStudentsList = function() {
     studentsList.forEach(student => {
-    return console.log(`name: ${student.getName()}, email: ${student.getEmail()}`, student.getHomeworkResults())
-  });
-};
+      return console.log(`name: ${student.getName()}, email: ${student.getEmail()}`, student.getHomeworkResults())
+    });
+  };
   this.addHomeworkResults = function(homeworkResult) {
     let topicName = homeworkResult.topic;
     let studentsResultsTopic = homeworkResult.results;
