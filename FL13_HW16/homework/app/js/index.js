@@ -3,30 +3,60 @@ const appContainer = document.getElementById('app-container');
 
 
 document.forms.create.onsubmit = function() {
-  let newUser = {
+  createUser({
     name: this.name.value,
-    username: this.userName.value
-  }
-  createNewUser(newUser);
+    nickname: this.nickname.value
+  });
   return false;
 };
 
-function createNewUser(newUser) {
-  let name = newUser.name;
-  let username = newUser.username;
+function createUser({ name, nickname }) {
+  // call API
+  renderTable([{
+    id: makeRequest('POST', baseUrl),
+    name,
+    nickname
+  }])
+}
 
-  let table = document.querySelector('tbody');
-  let tableRow = document.createElement('tr');
-  table.appendChild(tableRow);
-  tableRow.innerHTML = `<td><span></span></td>
-                        <td><input type="text" id="listName" name="Name"></td>
-                        <td><input type="text" id="listNickname" name="Username"></td>
-                        <td><input type="submit" value="Update"></td>
-                        <td><input type="submit" value="Delete"></td>`;
+function updateUser(id) {
 
-  let userNameInput = document.getElementById('listName');
-  userNameInput.setAttribute('value', name);
+  const name = document.getElementById('name-' + id).value;
+  const nickname = document.getElementById('nickname-' + id).value;
 
-  let userNicnameInput = document.getElementById('listNickname');
-  userNicnameInput.setAttribute('value', username);
+  // call API
+  renderTable([{
+    id: makeRequest('POST', baseUrl),
+    name,
+    nickname
+  }])
+}
+
+function renderTable(users) {
+  const table = document.getElementById('table-entrypoint');
+  const rows = []
+  users.forEach(user => {
+    rows.push(`
+      <tr>
+        <td><span>${user.id}</span></td>
+        <td><input value="${user.name}" id="name-${user.id}"></td>
+        <td><input value="${user.nickname}" id="nickname-${user.id}"></td>
+        <td><button onclick="updateUser(${user.id})">Update</button></td>
+        <td><button onclick="deleteUser(${user.id})">Delete</button></td>
+      </tr>
+    `)
+  })
+  table.innerHTML = rows.join('\n')
+}
+
+function makeRequest(method, url) {
+  let xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.onload = function() {
+    alert('тут походу что-то нужно вставить? ф-цию которая и должна что-то делать?');
+  };
+  xhr.onerror = function() {
+    alert('Error. Something went wrong');
+  };
+  xhr.send();
 }
