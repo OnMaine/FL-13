@@ -57,16 +57,14 @@ function renderTable(users) {
   tableBody.innerHTML = rows.join('\n')
 }
 
-
-
 function disabledInput() {
+  let input = document.getElementById('condition');
+  input.setAttribute('disabled', 'disabled');
   let list = document.querySelector('div.list-app');
   let loading = document.createElement('div');
   loading.setAttribute('id', 'loading')
   loading.innerHTML = '<h1>Loading...</h1>';
   list.before(loading);
-  let input = document.getElementById('condition');
-  input.setAttribute('disabled', 'true');
 }
 
 function loadend() {
