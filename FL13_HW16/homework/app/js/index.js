@@ -49,8 +49,8 @@ function renderTable(users) {
         <td><span>${user.id}</span></td>
         <td><input value="${user.name}" id="name-${user.id}"></td>
         <td><input value="${user.username}" id="username-${user.id}"></td>
-        <td><button id="condition" onclick="updateUser('${user.id}')">Update</button></td>
-        <td><button id="condition" onclick="deleteUser('${user.id}')">Delete</button></td>
+        <td><button onclick="updateUser('${user.id}')">Update</button></td>
+        <td><button onclick="deleteUser('${user.id}')">Delete</button></td>
       </tr>
     `)
   })
@@ -65,6 +65,8 @@ function disabledInput() {
   loading.setAttribute('id', 'loading')
   loading.innerHTML = '<h1>Loading...</h1>';
   list.before(loading);
+  let buttons = document.querySelectorAll('button');
+  buttons.forEach(elements => elements.setAttribute('disabled', 'disabled'));
 }
 
 function loadend() {
