@@ -1,62 +1,80 @@
 const baseUrl = 'http://localhost:3000';
 const appContainer = document.getElementById('app-container');
 
-
 document.forms.create.onsubmit = function() {
   createUser({
     name: this.name.value,
-    nickname: this.nickname.value
+    username: this.username.value
   });
   return false;
 };
 
-function createUser({ name, nickname }) {
-  // call API
-  renderTable([{
-    id: makeRequest('POST', baseUrl),
-    name,
-    nickname
-  }])
+getUsers()
+
+function getUsers() {
+  apiRequest('GET', `${baseUrl}/users`, null, users => {
+    renderTable(users)
+  })
+}
+
+function createUser(userData) {
+  apiRequest('POST', `${baseUrl}/users`, userData, () => {
+    getUsers()
+  })
 }
 
 function updateUser(id) {
+  const userData = {
+    name: document.getElementById('name-' + id).value,
+    username: document.getElementById('username-' + id).value
+  }
 
-  const name = document.getElementById('name-' + id).value;
-  const nickname = document.getElementById('nickname-' + id).value;
+  apiRequest('PUT', `${baseUrl}/users/${id}`, userData, () => {
+    getUsers()
+  })
+}
 
-  // call API
-  renderTable([{
-    id: makeRequest('POST', baseUrl),
-    name,
-    nickname
-  }])
+function deleteUser(id) {
+  apiRequest('DELETE', `${baseUrl}/users/${id}`, null, () => {
+    getUsers()
+  })
 }
 
 function renderTable(users) {
-  const table = document.getElementById('table-entrypoint');
+  const tableBody = document.getElementById('entrypoint');
   const rows = []
   users.forEach(user => {
     rows.push(`
       <tr>
         <td><span>${user.id}</span></td>
         <td><input value="${user.name}" id="name-${user.id}"></td>
-        <td><input value="${user.nickname}" id="nickname-${user.id}"></td>
-        <td><button onclick="updateUser(${user.id})">Update</button></td>
-        <td><button onclick="deleteUser(${user.id})">Delete</button></td>
+        <td><input value="${user.username}" id="username-${user.id}"></td>
+        <td><button onclick="updateUser('${user.id}')">Update</button></td>
+        <td><button onclick="deleteUser('${user.id}')">Delete</button></td>
       </tr>
     `)
   })
-  table.innerHTML = rows.join('\n')
+  tableBody.innerHTML = rows.join('\n')
 }
 
-function makeRequest(method, url) {
-  let xhr = new XMLHttpRequest();
+function apiRequest(method, url, body, callback) {
+  const xhr = new XMLHttpRequest();
+  const isGet = method.toLowerCase() === 'get'
+  const isDelete = method.toLowerCase() === 'delete'
   xhr.open(method, url);
-  xhr.onload = function() {
-    alert('тут походу что-то нужно вставить? ф-цию которая и должна что-то делать?');
+  xhr.onload = () => {
+    const data = isGet ? JSON.parse(xhr.response) : null;
+    callback(data);
   };
   xhr.onerror = function() {
-    alert('Error. Something went wrong');
+    alert('Api Request Error');
   };
-  xhr.send();
+  if (isGet) {
+    xhr.send();
+  } else {
+    const payload = body ? JSON.stringify(body) : null;
+    xhr.setRequestHeader('Content-type', 'application/json');
+    if (isDelete) xhr.setRequestHeader('Authorization', 'admin')
+    xhr.send(payload);
+  }
 }
