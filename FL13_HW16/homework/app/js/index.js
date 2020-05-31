@@ -49,22 +49,47 @@ function renderTable(users) {
         <td><span>${user.id}</span></td>
         <td><input value="${user.name}" id="name-${user.id}"></td>
         <td><input value="${user.username}" id="username-${user.id}"></td>
-        <td><button onclick="updateUser('${user.id}')">Update</button></td>
-        <td><button onclick="deleteUser('${user.id}')">Delete</button></td>
+        <td><button id="condition" onclick="updateUser('${user.id}')">Update</button></td>
+        <td><button id="condition" onclick="deleteUser('${user.id}')">Delete</button></td>
       </tr>
     `)
   })
   tableBody.innerHTML = rows.join('\n')
 }
 
+
+
+function disabledInput() {
+  let list = document.querySelector('div.list-app');
+  let loading = document.createElement('div');
+  loading.setAttribute('id', 'loading')
+  loading.innerHTML = '<h1>Loading...</h1>';
+  list.before(loading);
+  let input = document.getElementById('condition');
+  input.setAttribute('disabled', 'true');
+}
+
+function loadend() {
+  let loading = document.getElementById('loading');
+  loading.remove();
+  let input = document.getElementById('condition');
+  input.removeAttribute('disabled');
+}
+
 function apiRequest(method, url, body, callback) {
   const xhr = new XMLHttpRequest();
-  const isGet = method.toLowerCase() === 'get'
-  const isDelete = method.toLowerCase() === 'delete'
+  const isGet = method.toLowerCase() === 'get';
+  const isDelete = method.toLowerCase() === 'delete';
   xhr.open(method, url);
   xhr.onload = () => {
     const data = isGet ? JSON.parse(xhr.response) : null;
     callback(data);
+  };
+  xhr.onloadstart = () => {
+    disabledInput();
+  };
+  xhr.onloadend = () => {
+    loadend();
   };
   xhr.onerror = function() {
     alert('Api Request Error');
