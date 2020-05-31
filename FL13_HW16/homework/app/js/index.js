@@ -74,7 +74,9 @@ function apiRequest(method, url, body, callback) {
   } else {
     const payload = body ? JSON.stringify(body) : null;
     xhr.setRequestHeader('Content-type', 'application/json');
-    if (isDelete) xhr.setRequestHeader('Authorization', 'admin')
+    if (isDelete) {
+      xhr.setRequestHeader('Authorization', 'admin')
+    }
     xhr.send(payload);
   }
 }
